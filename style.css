@@ -1,127 +1,215 @@
-/* General Reset */
+/* --- Base Styles --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0a0a0a;
-    color: #ffffff;
-    overflow-x: hidden;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
 }
 
-/* Navbar */
+/* --- Navigation --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 10%;
-    position: absolute;
+    padding: 1.5rem 8%;
+    position: fixed;
     width: 100%;
-    z-index: 10;
+    top: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 100;
+    border-bottom: 1px solid #222;
 }
 
-.logo {
-    font-size: 1.8rem;
+.brand-logo {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
     font-weight: bold;
-    letter-spacing: 4px;
 }
 
-.logo span {
-    color: #555; /* Subtle grey for the second 'x' */
-}
+.brand-logo span { color: #555; }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
-.nav-links li {
-    margin-left: 30px;
-}
+.nav-links li { margin: 0 20px; }
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
-    font-size: 0.9rem;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.8rem;
     letter-spacing: 2px;
     transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: #888;
-}
+.nav-links a:hover { color: #fff; }
 
-/* Hero Section */
+/* --- Hero Section & Animations --- */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+    background: radial-gradient(circle, #111 0%, #000 100%);
 }
 
-.logo-container img {
-    width: 180px;
-    margin-bottom: 20px;
-    filter: invert(1); /* Turns the black logo white for the dark theme */
-    animation: float 4s ease-in-out infinite;
+.main-logo {
+    width: 220px;
+    filter: invert(1);
+    animation: floatLogo 4s ease-in-out infinite;
+    margin-bottom: 30px;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    letter-spacing: 10px;
-    margin-bottom: 1rem;
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
 }
 
-.hero-content p {
-    font-size: 1.1rem;
-    color: #888;
-    margin-bottom: 2rem;
-}
-
-/* Animations */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
-
-.fade-in {
-    animation: fadeInUp 1.5s ease forwards;
-}
-
-.fade-in-delay {
-    animation: fadeInUp 2s ease forwards;
+.reveal-text {
+    font-size: 3rem;
+    letter-spacing: 12px;
+    margin-bottom: 15px;
     opacity: 0;
+    animation: fadeInUp 1.5s forwards 0.5s;
+}
+
+.sub-text {
+    color: #666;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards 0.8s;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Button with Hover Effect */
 .cta-btn {
-    padding: 15px 40px;
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    cursor: pointer;
-    letter-spacing: 2px;
-    transition: all 0.4s ease;
+    display: inline-block;
+    padding: 15px 45px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+    transition: 0.4s;
 }
 
 .cta-btn:hover {
-    background: white;
-    color: black;
-    transform: scale(1.05);
+    background: #fff;
+    color: #000;
+}
+
+/* --- Brand Story --- */
+.story-section {
+    padding: 100px 20%;
+    text-align: center;
+    background: #050505;
+}
+
+.story-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+}
+
+/* --- Product Grid --- */
+.collection { padding: 80px 8%; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2rem;
+    letter-spacing: 8px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #0a0a0a;
+    padding: 40px 20px;
+    border: 1px solid #1a1a1a;
+    text-align: center;
+    position: relative;
+    transition: 0.4s;
+}
+
+.product-card:hover {
+    border-color: #444;
+    background: #111;
+}
+
+.card-logo {
+    width: 60px;
+    filter: invert(1);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.6rem;
+    background: #333;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+}
+
+.price { margin: 15px 0; font-weight: bold; color: #888; }
+
+.buy-btn {
+    width: 100%;
+    padding: 12px;
+    background: none;
+    border: 1px solid #333;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover { background: #fff; color: #000; border-color: #fff; }
+
+/* --- Table Section --- */
+.details-section { padding: 80px 8%; background: #000; }
+
+.table-container { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+th, td {
+    padding: 20px;
+    border-bottom: 1px solid #111;
+    text-align: left;
+}
+
+th { color: #444; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
+
+td { color: #888; font-size: 0.9rem; }
+
+/* --- Footer --- */
+footer {
+    padding: 50px;
+    text-align: center;
+    border-top: 1px solid #111;
+    color: #333;
+    font-size: 0.8rem;
 }
