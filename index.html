@@ -9,24 +9,125 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">FOX<span>x</span></div>
+        <div class="brand-logo">FOX<span>x</span></div>
         <ul class="nav-links">
-            <li><a href="#">Collection</a></li>
-            <li><a href="#">The Story</a></li>
-            <li><a href="#">Bespoke</a></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#details">Scent Profiles</a></li>
         </ul>
+        <div class="cart-icon">Bag (0)</div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="logo-container">
-                <img src="1771497359199.png" alt="FOXx Logo" class="floating-logo">
+            <div class="logo-wrapper">
+                <img src="1000058663.jpg" alt="FOXx Logo" class="main-logo">
             </div>
-            <h1 class="fade-in">UNLEASH THE INSTINCT</h1>
-            <p class="fade-in-delay">Premium scents for the bold and the mysterious.</p>
-            <button class="cta-btn">Explore Collection</button>
+            <h1 class="reveal-text">UNLEASH THE INSTINCT</h1>
+            <p class="sub-text">Handcrafted fragrances for the bold and the mysterious.</p>
+            <a href="#collection" class="cta-btn">Explore the Collection</a>
         </div>
     </section>
+
+    <section class="story-section" id="story">
+        <div class="story-content">
+            <h2>The Art of the Hunt</h2>
+            <p>At FOXx Perfumes, we believe scent is the ultimate predatory instinct. Established in the heart of the wild, our perfumers blend rare botanicals with modern chemistry to create olfactive experiences that are both untamed and sophisticated.</p>
+            <p>Every bottle is a tribute to the sleek, cunning, and nocturnal nature of the fox. We don't just sell perfume; we sell a presence that lingers long after you've left the room.</p>
+        </div>
+    </section>
+
+    <section class="collection" id="collection">
+        <h2 class="section-title">Signature Scents</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="badge">Bestseller</div>
+                <img src="1000058663.jpg" class="card-logo" alt="Logo">
+                <h3>Midnight Vixen</h3>
+                <p class="tagline">Oud & Dark Jasmine</p>
+                <p class="price">$185.00</p>
+                <button class="buy-btn">Add to Bag</button>
+            </div>
+
+            <div class="product-card">
+                <img src="1000058663.jpg" class="card-logo" alt="Logo">
+                <h3>Arctic Frost</h3>
+                <p class="tagline">White Pepper & Bergamot</p>
+                <p class="price">$160.00</p>
+                <button class="buy-btn">Add to Bag</button>
+            </div>
+
+            <div class="product-card">
+                <img src="1000058663.jpg" class="card-logo" alt="Logo">
+                <h3>Golden Ember</h3>
+                <p class="tagline">Amber & Smoked Vanilla</p>
+                <p class="price">$210.00</p>
+                <button class="buy-btn">Add to Bag</button>
+            </div>
+
+            <div class="product-card">
+                <img src="1000058663.jpg" class="card-logo" alt="Logo">
+                <h3>Forest Phantom</h3>
+                <p class="tagline">Moss & Pine Needle</p>
+                <p class="price">$175.00</p>
+                <button class="buy-btn">Add to Bag</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="details-section" id="details">
+        <h2>Technical Scent Profiles</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fragrance Name</th>
+                        <th>Top Notes</th>
+                        <th>Heart Notes</th>
+                        <th>Base Notes</th>
+                        <th>Longevity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Midnight Vixen</td>
+                        <td>Saffron, Raspberry</td>
+                        <td>Black Rose</td>
+                        <td>Oud, Leather</td>
+                        <td>12+ Hours</td>
+                    </tr>
+                    <tr>
+                        <td>Arctic Frost</td>
+                        <td>Frozen Mint</td>
+                        <td>White Pepper</td>
+                        <td>Cedarwood</td>
+                        <td>8 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>Golden Ember</td>
+                        <td>Honey, Cinnamon</td>
+                        <td>Tobacco Leaf</td>
+                        <td>Vanilla Resin</td>
+                        <td>10 Hours</td>
+                    </tr>
+                    <tr>
+                        <td>Forest Phantom</td>
+                        <td>Wild Sage</td>
+                        <td>Pine, Iris</td>
+                        <td>Oakmoss, Musk</td>
+                        <td>9 Hours</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 FOXx Perfumes. Designed for the sophisticated.</p>
+    </footer>
 
 </body>
 </html>
